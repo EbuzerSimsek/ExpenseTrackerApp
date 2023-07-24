@@ -19,10 +19,26 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-        
-        
-        profileNameLabel.text = service.GetCurrentUser()["name"] as? String
-        userName.text = service.GetCurrentUser().username
+        self.title = "Profile"
+        if let currentUser = PFUser.current() {
+            if let username = currentUser.username {
+                userName.text = "\("@")\(username)"
+                profileNameLabel.text = currentUser["name"] as? String
+                
+                if let imageFile = PFUser.current()?["image"] as? PFFileObject {
+                    imageFile.getDataInBackground { (data, error) in
+                        if let imageData = data, let image = UIImage(data: imageData) {
+                            self.profileImage.image = image
+                        } else {
+                            self.service.makeAlert(viewController: self, titleInput: "Error", messageInput: error?.localizedDescription ?? "Error")
+                        }
+                    }
+                } else {
+                    // Kullanıcının resim alanı boş veya geçersiz
+                }
+                
+            }
+        }
         
     }
   

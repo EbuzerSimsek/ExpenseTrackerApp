@@ -29,16 +29,17 @@ class SalaryVC: UIViewController {
         if let salaryText = salaryTextField.text, var salaryValue = Double(salaryText) {
            // service.GetSalary(Salary: &salaryValue, viewController: self)
             
-            let object = PFObject(className: "Expenses")
-            object["accountOwner"] = PFUser.current()!.username!
-            object["salary"] = salaryValue
+            let object = PFObject(className: "Income")
+            object["IncomeValue"] = salaryValue
+            object["postOwner"] = PFUser.current()?.username
+            object["ExpenseType"] = "Salary"
             
             
             object.saveInBackground { succes, error in
                 if error != nil {
                     print(error?.localizedDescription)
                 } else {
-                    print("succes")
+                    self.performSegue(withIdentifier: "toMessageVC", sender: nil)
                 }
             }
             

@@ -12,6 +12,7 @@ class User: PFUser {
     @NSManaged var income: Double
     @NSManaged var expense: Double
     @NSManaged var salary: Double
+    @NSManaged var image : UIImage
 }
 
 

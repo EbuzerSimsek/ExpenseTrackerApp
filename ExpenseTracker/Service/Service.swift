@@ -15,12 +15,20 @@ struct Service {
     private var model = User()
     
     
-    func SignUpFunction(viewController: UIViewController,model : User) {
+    func SignUpFunction(viewController: UIViewController,model : User,image:UIImage) {
         
         let user = PFUser()
         user.username = model.username
         user.password = model.password
         user["name"] = model.name
+        let data = image.jpegData(compressionQuality: 0.5)
+        let pfimage = PFFileObject(name:"image.png", data: data!)
+        user["image"] = pfimage
+
+        
+        
+        
+        
         user.signUpInBackground { succes, error in
             if error != nil{
                 self.makeAlert(viewController: viewController,titleInput: "Error", messageInput:error?.localizedDescription ?? "Username / Password??")
@@ -53,14 +61,13 @@ struct Service {
     }
     
     
+    
+    
     func GetSalary(Salary : inout Double,viewController:UIViewController){
         let object = PFObject(className: "Expenses")
         let uuid = UUID().uuidString
         let uuidExpensesAndIncomes = "\(uuid) \(PFUser.current()!.username!)"
         
-        
-//        object["accountOwner"] = PFUser.current()!.username!
-//        object["income"] = PFUser.current()!["income"]
         object["uuidExpensesAndIncomes"] = uuidExpensesAndIncomes
         object["Salary"] = Salary
         
@@ -78,8 +85,27 @@ struct Service {
         
     }
     
+    func getProfileImage(ImageView:UIImageView,viewController:UIViewController){
+        
+        if let imageFile = PFUser.current()?["image"] as? PFFileObject {
+            imageFile.getDataInBackground { (data, error) in
+                if let imageData = data, var image = UIImage(data: imageData) {
+                    
+                    DispatchQueue.main.async {
+                        ImageView.image = image
+                    }
+                    
+                    
+                } else {
+                    makeAlert(viewController:viewController , titleInput: "Error", messageInput: error?.localizedDescription ?? "Error")
+                }
+            }
+        }
+        
+        
+    }
     
-    
+   
     
     
     

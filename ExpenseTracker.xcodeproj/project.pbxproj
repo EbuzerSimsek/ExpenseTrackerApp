@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2222A5702A69A873009864EA /* ExpenseAndIncomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222A56F2A69A872009864EA /* ExpenseAndIncomeCell.swift */; };
+		2222A5722A6C226C009864EA /* resizeToSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222A5712A6C226C009864EA /* resizeToSquare.swift */; };
 		2272D5482A61B7DF00A84E1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2272D5472A61B7DF00A84E1B /* ViewController.swift */; };
 		2272D54C2A61B85E00A84E1B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2272D54B2A61B85E00A84E1B /* Service.swift */; };
 		22A825742A61DB0C008482F9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A825732A61DB0C008482F9 /* Model.swift */; };
 		22A825782A61EA3B008482F9 /* Logo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A825772A61EA3B008482F9 /* Logo2.swift */; };
 		22A8257C2A61FDF9008482F9 /* SalaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A8257B2A61FDF9008482F9 /* SalaryVC.swift */; };
 		22A8257E2A649417008482F9 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A8257D2A649417008482F9 /* PopUpVC.swift */; };
+		22A825882A65ED80008482F9 /* ExpenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A825872A65ED80008482F9 /* ExpenseVC.swift */; };
+		22A8258A2A65ED9B008482F9 /* IncomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A825892A65ED9B008482F9 /* IncomeVC.swift */; };
 		22E4B5C82A5C5723005A244F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E4B5C72A5C5723005A244F /* AppDelegate.swift */; };
 		22E4B5CA2A5C5723005A244F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E4B5C92A5C5723005A244F /* SceneDelegate.swift */; };
 		22E4B5CF2A5C5723005A244F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E4B5CD2A5C5723005A244F /* Main.storyboard */; };
@@ -28,12 +32,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2222A56F2A69A872009864EA /* ExpenseAndIncomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseAndIncomeCell.swift; sourceTree = "<group>"; };
+		2222A5712A6C226C009864EA /* resizeToSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resizeToSquare.swift; sourceTree = "<group>"; };
 		2272D5472A61B7DF00A84E1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2272D54B2A61B85E00A84E1B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		22A825732A61DB0C008482F9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		22A825772A61EA3B008482F9 /* Logo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo2.swift; sourceTree = "<group>"; };
 		22A8257B2A61FDF9008482F9 /* SalaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryVC.swift; sourceTree = "<group>"; };
 		22A8257D2A649417008482F9 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
+		22A825872A65ED80008482F9 /* ExpenseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseVC.swift; sourceTree = "<group>"; };
+		22A825892A65ED9B008482F9 /* IncomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeVC.swift; sourceTree = "<group>"; };
 		22E4B5C42A5C5723005A244F /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E4B5C72A5C5723005A244F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22E4B5C92A5C5723005A244F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +131,9 @@
 			isa = PBXGroup;
 			children = (
 				22E4B5CD2A5C5723005A244F /* Main.storyboard */,
+				2222A56F2A69A872009864EA /* ExpenseAndIncomeCell.swift */,
+				22A825872A65ED80008482F9 /* ExpenseVC.swift */,
+				22A825892A65ED9B008482F9 /* IncomeVC.swift */,
 				22A8257D2A649417008482F9 /* PopUpVC.swift */,
 				22E4B5FB2A5EBF5C005A244F /* WelcomeVC.swift */,
 				2272D5472A61B7DF00A84E1B /* ViewController.swift */,
@@ -131,6 +142,7 @@
 				22E4B6012A5ECF9D005A244F /* MessageVC.swift */,
 				22E4B6032A5ECFCA005A244F /* ProfileVC.swift */,
 				22E4B5FD2A5ECF64005A244F /* SignUpVC.swift */,
+				2222A5712A6C226C009864EA /* resizeToSquare.swift */,
 				22E4B6082A5ED0B7005A244F /* LogoVC.swift */,
 				22A825772A61EA3B008482F9 /* Logo2.swift */,
 				22E4B5C72A5C5723005A244F /* AppDelegate.swift */,
@@ -267,16 +279,20 @@
 				22E4B5C82A5C5723005A244F /* AppDelegate.swift in Sources */,
 				22A825782A61EA3B008482F9 /* Logo2.swift in Sources */,
 				22E4B6002A5ECF7F005A244F /* LoginVC.swift in Sources */,
+				22A825882A65ED80008482F9 /* ExpenseVC.swift in Sources */,
 				22E4B5CA2A5C5723005A244F /* SceneDelegate.swift in Sources */,
 				2272D5482A61B7DF00A84E1B /* ViewController.swift in Sources */,
 				22E4B6092A5ED0B7005A244F /* LogoVC.swift in Sources */,
 				22E4B6042A5ECFCA005A244F /* ProfileVC.swift in Sources */,
 				22E4B6022A5ECF9D005A244F /* MessageVC.swift in Sources */,
+				2222A5702A69A873009864EA /* ExpenseAndIncomeCell.swift in Sources */,
 				2272D54C2A61B85E00A84E1B /* Service.swift in Sources */,
 				22A825742A61DB0C008482F9 /* Model.swift in Sources */,
 				22A8257E2A649417008482F9 /* PopUpVC.swift in Sources */,
+				22A8258A2A65ED9B008482F9 /* IncomeVC.swift in Sources */,
 				22E4B5FE2A5ECF64005A244F /* SignUpVC.swift in Sources */,
 				22E4B5FC2A5EBF5C005A244F /* WelcomeVC.swift in Sources */,
+				2222A5722A6C226C009864EA /* resizeToSquare.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +448,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +478,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
