@@ -11,19 +11,35 @@ import DropDown
 
 class ExpenseVC: UIViewController {
     
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var ExpensesVCview: UIView!
     let myDropDown = DropDown()
     let ExpenseTypes = ["Book","Farmacy","Coffee","Plane","Food","Hotel","Transportation","Shopping"]
     
 
     
+    @IBOutlet weak var ExpenseDescription: UITextField!
     @IBOutlet weak var ExpenseAmount: UITextField!
-    
     @IBOutlet weak var ExpenseTypeLabel: UILabel!
     
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ExpenseDescription.clipsToBounds = true
+        ExpenseDescription.layer.cornerRadius = 10.0
+        ExpenseDescription.layer.borderWidth = 0.5
+        ExpenseDescription.layer.borderColor = UIColor.gray.cgColor
+        ExpensesVCview.clipsToBounds = true
+        ExpensesVCview.layer.cornerRadius = 30.0
+        ExpenseTypeLabel.clipsToBounds = true
+        ExpenseTypeLabel.layer.cornerRadius = 10.0
+        ExpenseTypeLabel.layer.borderColor = UIColor.gray.cgColor
+        ExpenseTypeLabel.layer.borderWidth = 0.5
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 30.0
+        
         
         myDropDown.anchorView = ExpenseTypeLabel
         myDropDown.dataSource = ExpenseTypes
@@ -32,8 +48,16 @@ class ExpenseVC: UIViewController {
         myDropDown.direction = .bottom
         myDropDown.selectionAction = { (index : Int, item : String) in
             self.ExpenseTypeLabel.text = self.ExpenseTypes[index]
-            self.ExpenseTypeLabel.textColor = .white
+            self.ExpenseTypeLabel.textColor = .black
             
+            let attributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.white
+            ]
+            
+            
+            self.ExpenseAmount.attributedPlaceholder = NSAttributedString(string: "0", attributes: attributes)
+            self.ExpenseAmount.frame = CGRect(x: 50, y: 100, width: 200, height: 100)
+            self.title = "Expenses"
             
         }
     }
@@ -48,15 +72,17 @@ class ExpenseVC: UIViewController {
         return dateString
     }
     
-    @IBAction func DropDownMenuButton(_ sender: Any) {
+  
+    
+    @IBAction func DropDownMenuTapped(_ sender: Any) {
         myDropDown.show()
     }
     
 
-
     @IBAction func ContinueButton(_ sender: Any) {
-        var ExpenseAmount = Int(ExpenseAmount.text!)
+        let ExpenseAmount = Int(ExpenseAmount.text!)
         let object = PFObject(className: "Income")
+        object["ExpenseDescription"] = ExpenseDescription.text
         object["Expenses"] = ExpenseAmount
         object["postOwner"] = PFUser.current()!.username
         object["ExpenseType"] = ExpenseTypeLabel.text

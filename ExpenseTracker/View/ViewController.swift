@@ -37,6 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var ExpensesImageArray = [UIImage]()
     var ExpensesTypeArray = [String]()
     var ExpensesTimeArray = [String]()
+    var ExpensesDetailArray = [String]()
     
    
     
@@ -65,6 +66,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         ExpensesView.layer.masksToBounds = true
         IncomeView.layer.cornerRadius = 20.0
         IncomeView.layer.masksToBounds = true
+        
         
         let gestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(ExpenseVCButton))
         let gestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(IncomeVCButton))
@@ -109,6 +111,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.ExpenseValueArray.removeAll(keepingCapacity: false)
                 self.ExpensesTypeArray.removeAll(keepingCapacity: false)
                 self.ExpensesTimeArray.removeAll(keepingCapacity: false)
+                self.ExpensesDetailArray.removeAll(keepingCapacity: false)
                 
                 
                 
@@ -131,7 +134,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         
                         let StringDate = object.object(forKey: "ExpenseTime") as? String
                         self.ExpensesTimeArray.append(StringDate ?? "Time")
-                       
+                        
+                        
+                        let ExpensesDescription = object.object(forKey: "ExpenseDescription") as? String
+                        
+                        self.ExpensesDetailArray.append(ExpensesDescription ?? "ExpenseDescription")
                        
                         
                     }
@@ -162,6 +169,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @objc func IncomeVCButton() {
         performSegue(withIdentifier: "ToIncomeVC", sender: nil)
+        
     }
     
     
@@ -181,8 +189,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let expenseCategory = ExpensesTypeArray[indexPath.row]
         
-   
-
+        cell.ExpenseDetail.text = ExpensesDetailArray[indexPath.row]
+ 
         
         
         
